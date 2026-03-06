@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="/css/next-ui.css" />
 </head>
   <body class="next-ui">
+  <div class="top-glow"></div>
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -35,7 +36,8 @@
       </nav>
     </header>
 
-    <main>
+    <main class="page-main">
+  <div class="page-container container">
       <div class="container mt-4" th:if="${session.failure!=null || session.success!=null}">
         <div class="alert alert-danger alert-dismissible fade show" th:if="${session.failure}" role="alert">
           <span th:text="${session.failure}"></span>
@@ -45,10 +47,10 @@
           <span th:text="${session.success}"></span>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <div th:text="${@sessionMessageRemover.removeMessage()}"></div>
+        <div class="session-message-remover" th:text="${@sessionMessageRemover.removeMessage()}"></div>
       </div>
 
-      <section class="hero text-center">
+      <section class="hero page-hero text-center">
         <div class="container">
           <h1 class="display-4">Admin Dashboard</h1>
           <p class="lead">Manage your store and products</p>
@@ -58,12 +60,13 @@
           </div>
         </div>
       </section>
-    </main>
+      </div>
+</main>
 
     <footer class="footer">
       <div class="container">
         <p class="mb-0">
-          <i class="bi bi-c-circle me-1"></i>2024 Ecommerce Store. All rights reserved.
+          <i class="bi bi-c-circle me-1"></i>2026 Ecommerce Store. All rights reserved.
         </p>
       </div>
     </footer>
@@ -84,4 +87,10 @@
   <script src="/js/next-ui.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 

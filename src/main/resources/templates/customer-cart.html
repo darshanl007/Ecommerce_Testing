@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/css/next-ui.css" />
 </head>
   <body class="next-ui">
+  <div class="top-glow"></div>
       <header>
           <nav class="navbar navbar-expand-lg">
               <div class="container">
@@ -33,7 +34,8 @@
           </nav>
       </header>
 
-      <main>
+      <main class="page-main">
+  <div class="page-container container">
           <div class="container mt-4" th:if="${session.failure!=null || session.success!=null}">
               <div class="alert alert-danger alert-dismissible fade show" th:if="${session.failure}" role="alert">
                   <span th:text="${session.failure}"></span>
@@ -43,7 +45,7 @@
                   <span th:text="${session.success}"></span>
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
-              <div th:text="${@sessionMessageRemover.removeMessage()}"></div>
+              <div class="session-message-remover" th:text="${@sessionMessageRemover.removeMessage()}"></div>
           </div>
 
           <div class="container mt-4">
@@ -60,7 +62,7 @@
                               <span class="badge bg-primary" th:text="${item.category}"></span>
                           </div>
                           <div class="col-md-2">
-                              <p class="fw-bold" th:text="'â‚¹' + ${item.price/item.quantity}"></p>
+                              <p class="fw-bold" th:text="'&#8377;' + ${item.price/item.quantity}"></p>
                           </div>
                           <div class="col-md-2">
                               <div class="d-flex align-items-center">
@@ -70,7 +72,7 @@
                               </div>
                           </div>
                           <div class="col-md-2">
-                              <p class="fw-bold" th:text=" ${item.quantity * item.price/item.quantity} + 'â‚¹'"></p>
+                              <p class="fw-bold" th:text=" ${item.quantity * item.price/item.quantity} + '&#8377;'"></p>
                           </div>
                       </div>
                   </div>
@@ -80,7 +82,7 @@
                   <div class="card-body">
                       <div class="d-flex justify-content-between align-items-center">
                           <h4>Total Amount:</h4>
-                          <h4 class="fw-bold" th:text="'â‚¹' + ${cart.price}"></h4>
+                          <h4 class="fw-bold" th:text="'&#8377;' + ${cart.price}"></h4>
                       </div>
                   </div>
               </div>
@@ -94,11 +96,12 @@
 
            
           </div>
-      </main>
+        </div>
+</main>
 
       <footer class="footer">
           <div class="container">
-              <p class="mb-0"><i class="bi bi-c-circle me-1"></i>2024 Ecommerce Store. All rights reserved.</p>
+              <p class="mb-0"><i class="bi bi-c-circle me-1"></i>2026 Ecommerce Store. All rights reserved.</p>
           </div>
       </footer>
 
@@ -118,5 +121,11 @@
   <script src="/js/next-ui.js"></script>
 </body>
   </html>
+
+
+
+
+
+
 
 

@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="/css/next-ui.css" />
 </head>
   <body class="next-ui">
+  <div class="top-glow"></div>
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -37,7 +38,8 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="page-main">
+  <div class="page-container container">
       <div class="container mt-4" th:if="${session.failure!=null || session.success!=null}">
         <div class="alert alert-danger alert-dismissible fade show" th:if="${session.failure}" role="alert">
           <span th:text="${session.failure}"></span>
@@ -47,15 +49,15 @@
           <span th:text="${session.success}"></span>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <div th:text="${@sessionMessageRemover.removeMessage()}"></div>
+        <div class="session-message-remover" th:text="${@sessionMessageRemover.removeMessage()}"></div>
       </div>
-      <section class="hero text-center">
+      <section class="hero page-hero text-center">
         <div class="container">
           <h1 class="display-4">Manage Products</h1>
           <p class="lead">View and manage your products</p>
         </div>
       </section>
-      <section class="featured-products py-5">
+      <section class="featured-products section-shell py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-4" th:each="product:${products}">
@@ -66,7 +68,7 @@
                   <p th:text="${product.description}"></p>
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <span class="badge bg-primary" th:text="${product.category}"></span>
-                    <span class="fw-bold" th:text="'â‚¹' + ${product.price}"></span>
+                    <span class="fw-bold" th:text="'&#8377;' + ${product.price}"></span>
                   </div>
                   <p>
                     <small class="text-muted" th:text="'Stock: ' + ${product.stock}"></small>
@@ -84,11 +86,12 @@
           </div>
         </div>
       </section>
-    </main>
+      </div>
+</main>
     <footer class="footer">
       <div class="container">
         <p class="mb-0">
-          <i class="bi bi-c-circle me-1"></i>2024 Ecommerce Store. All rights reserved.
+          <i class="bi bi-c-circle me-1"></i>2026 Ecommerce Store. All rights reserved.
         </p>
       </div>
     </footer>
@@ -107,4 +110,10 @@
   <script src="/js/next-ui.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 

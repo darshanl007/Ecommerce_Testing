@@ -15,8 +15,10 @@
 </head>
 
 <body class="next-ui">
+  <div class="top-glow"></div>
   
-<main class="container mt-5">
+<main class="page-main container mt-5">
+  <div class="page-container container">
   <h1 class="text-center mb-4" style="color: var(--primary-color); font-weight: 800; text-shadow: 4px 4px 0px var(--secondary-color);">Order Confirmation</h1>
   <div class="row">
     <div class="col-md-8 offset-md-2">
@@ -34,7 +36,7 @@
                           <span class="badge bg-primary" th:text="${item.category}"></span>
                       </div>
                       <div class="col-md-2">
-                          <p class="fw-bold" th:text="'â‚¹' + ${item.price/item.quantity}"></p>
+                          <p class="fw-bold" th:text="'&#8377;' + ${item.price/item.quantity}"></p>
                       </div>
                       <div class="col-md-2">
                           <div class="d-flex align-items-center">
@@ -42,7 +44,7 @@
                           </div>
                       </div>
                       <div class="col-md-2">
-                          <p class="fw-bold" th:text="'â‚¹' + ${item.quantity * item.price/item.quantity}"></p>
+                          <p class="fw-bold" th:text="'&#8377;' + ${item.quantity * item.price/item.quantity}"></p>
                       </div>
                   </div>
               </div>
@@ -60,11 +62,12 @@
       </div>
     </div>
   </div>
+  </div>
 </main>
 
 <footer class="footer">
   <div class="container">
-      <p class="mb-0"><i class="bi bi-c-circle me-1"></i>2024 Ecommerce Store. All rights reserved.</p>
+      <p class="mb-0"><i class="bi bi-c-circle me-1"></i>2026 Ecommerce Store. All rights reserved.</p>
   </div>
 </footer>
 
@@ -102,4 +105,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
 

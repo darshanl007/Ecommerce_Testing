@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="/css/next-ui.css" />
 </head>
   <body class="next-ui">
+  <div class="top-glow"></div>
       <header>
           <nav class="navbar navbar-expand-lg">
               <div class="container">
@@ -34,7 +35,8 @@
           </nav>
       </header>
 
-      <main>
+      <main class="page-main">
+  <div class="page-container container">
           <div class="container mt-4">
               <h2 class="mb-4" style="color: var(--primary-color); font-weight: 800; text-shadow: 2px 2px 0px var(--secondary-color);">Order History</h2>
             
@@ -48,7 +50,7 @@
                               <p class="mb-0">Date: <span th:text="${#temporals.format(order.orderDateTime, 'dd-MM-yyyy HH:mm')}"></span></p>
                           </div>
                           <div class="col-md-4 text-end">
-                              <h6 class="mb-0">Total: â‚¹<span th:text="${order.totalAmount}"></span></h6>
+                              <h6 class="mb-0">Total: &#8377;<span th:text="${order.totalAmount}"></span></h6>
                           </div>
                       </div>
                   </div>
@@ -62,13 +64,13 @@
                               <span class="badge bg-primary" th:text="${item.category}"></span>
                           </div>
                           <div class="col-md-2">
-                              <p class="mb-0">Price: â‚¹<span th:text="${item.price/item.quantity}"></span></p>
+                              <p class="mb-0">Price: &#8377;<span th:text="${item.price/item.quantity}"></span></p>
                           </div>
                           <div class="col-md-2">
                               <p class="mb-0">Quantity: <span th:text="${item.quantity}"></span></p>
                           </div>
                           <div class="col-md-2">
-                              <p class="mb-0">Subtotal: â‚¹<span th:text="${item.price}"></span></p>
+                              <p class="mb-0">Subtotal: &#8377;<span th:text="${item.price}"></span></p>
                           </div>
                       </div>
                   </div>
@@ -78,11 +80,12 @@
               </div>
 
           </div>
-      </main>
+        </div>
+</main>
 
       <footer class="footer">
           <div class="container">
-              <p class="mb-0"><i class="bi bi-c-circle me-1"></i>2024 Ecommerce Store. All rights reserved.</p>
+              <p class="mb-0"><i class="bi bi-c-circle me-1"></i>2026 Ecommerce Store. All rights reserved.</p>
           </div>
       </footer>
 
@@ -90,5 +93,11 @@
   <script src="/js/next-ui.js"></script>
 </body>
   </html>
+
+
+
+
+
+
 
 

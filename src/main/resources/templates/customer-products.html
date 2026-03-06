@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="/css/next-ui.css" />
 </head>
 <body class="next-ui">
+  <div class="top-glow"></div>
 	<header>
 		<nav class="navbar navbar-expand-lg">
 			<div class="container">
@@ -46,7 +47,8 @@
 		</nav>
 	</header>
 
-	<main>
+	<main class="page-main">
+  <div class="page-container container">
 		<div class="container mt-4"
 			th:if="${session.failure!=null || session.success!=null}">
 			<div class="alert alert-danger alert-dismissible fade show"
@@ -61,7 +63,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="alert"
 					aria-label="Close"></button>
 			</div>
-			<div th:text="${@sessionMessageRemover.removeMessage()}"></div>
+			<div class="session-message-remover" th:text="${@sessionMessageRemover.removeMessage()}"></div>
 		</div>
 
 		<div class="container mt-4">
@@ -76,7 +78,7 @@
 							<div
 								class="d-flex justify-content-between align-items-center mb-3">
 								<span class="badge bg-primary" th:text="${product.category}"></span>
-								<span class="fw-bold" th:text="'â‚¹' + ${product.price}"></span>
+								<span class="fw-bold" th:text="'&#8377;' + ${product.price}"></span>
 							</div>
 							<p>
 								<small class="text-muted" th:text="'Stock: ' + ${product.stock}"></small>
@@ -104,12 +106,13 @@
 				<a href="/customer/home" class="btn btn-secondary">Back</a>
 			</div>
 		</div>
-	</main>
+	  </div>
+</main>
 
 	<footer class="footer">
 		<div class="container">
 			<p class="mb-0">
-				<i class="bi bi-c-circle me-1"></i>2025 Ecommerce Store. All rights
+				<i class="bi bi-c-circle me-1"></i>2026 Ecommerce Store. All rights
 				reserved.
 			</p>
 		</div>
@@ -132,4 +135,10 @@
 <script src="/js/next-ui.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 

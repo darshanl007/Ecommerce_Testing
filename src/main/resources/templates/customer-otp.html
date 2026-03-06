@@ -13,7 +13,9 @@
 <link rel="stylesheet" href="/css/next-ui.css" />
 </head>
 	<body class="next-ui">
-		<main>
+  <div class="top-glow"></div>
+		<main class="page-main">
+  <div class="page-container container">
 			<div class="container">
 				<div class="container mt-4" th:if="${session.failure!=null || session.success!=null}">
 					<div class="alert alert-danger alert-dismissible fade show" th:if="${session.failure}" role="alert">
@@ -24,7 +26,7 @@
 						<span th:text="${session.success}"></span>
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
-					<div th:text="${@sessionMessageRemover.removeMessage()}"></div>
+					<div class="session-message-remover" th:text="${@sessionMessageRemover.removeMessage()}"></div>
 				</div>
 
 				<div class="form-container">
@@ -51,7 +53,8 @@
 					</div>
 				</div>
 			</div>
-		</main>
+		  </div>
+</main>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
@@ -86,4 +89,10 @@
 	<script src="/js/next-ui.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
