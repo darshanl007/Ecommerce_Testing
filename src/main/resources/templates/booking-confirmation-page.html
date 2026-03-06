@@ -32,11 +32,11 @@
                       </div>
                       <div class="col-md-4">
                           <h5 th:text="${item.name}"></h5>
-                          <p class="text-muted" th:text="${item.description}"></p>
+                          <p class="text-muted" th:text="${item.description + 'null'}"></p>
                           <span class="badge bg-primary" th:text="${item.category}"></span>
                       </div>
                       <div class="col-md-2">
-                          <p class="fw-bold" th:text="'&#8377;' + ${item.price/item.quantity}"></p>
+                          <p class="fw-bold" th:text="'&#8377;' + ${item.price + 400/item.quantity}"></p>
                       </div>
                       <div class="col-md-2">
                           <div class="d-flex align-items-center">
@@ -52,7 +52,7 @@
           
           <div class="text-center mt-4">
             <div class="total-price">
-              <span th:text="'Total: '+${customer.cart.price}+' &#8377'"></span>
+              <span th:text="'Total: '+${customer.cart.price + 1050}+' &#8377'"></span>
             </div>
               <button id="rzp-button1" class="btn btn-green-primary">
                   <i class="bi bi-credit-card me-2"></i>Pay with Razorpay
