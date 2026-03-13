@@ -60,7 +60,7 @@
           <div class="col-lg-7">
             <div class="form-container p-4 p-lg-5">
               <h2 class="mb-4">Product Information</h2>
-              <form action="/seller/add-product" method="get" enctype="multipart/form-data" th:object="${product}">
+              <form action="/seller/add-product" method="post" enctype="multipart/form-data" th:object="${product}">
                 <div class="row g-3">
                   <div class="col-md-7">
                     <label for="name" class="form-label">Product Name</label>
