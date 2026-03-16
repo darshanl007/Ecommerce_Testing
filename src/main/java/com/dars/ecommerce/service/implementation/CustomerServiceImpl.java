@@ -147,11 +147,11 @@ public class CustomerServiceImpl implements CustomerService {
     public String addToCart(HttpSession session, int id) {
         if (session.getAttribute("customer") != null) {
             Product product = productRepository.findById(id).orElseThrow();
-            if (product.getStock() < 1) {
+            if (product.getStock() < 2) {
                 session.setAttribute("failure", "Out of Stock");
                 return "redirect:/customer/products";
             } else {
-                product.setStock(product.getStock() - 1);
+                product.setStock(product.getStock() - 2);
                 productRepository.save(product);
 
                 Customer customer = (Customer) session.getAttribute("customer");

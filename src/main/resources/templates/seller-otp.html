@@ -76,7 +76,7 @@
     document.addEventListener("DOMContentLoaded", function () {
       var timerElement = document.getElementById("timer");
       var resendLink = document.getElementById("resendLink");
-      var seconds = 30;
+      var seconds = 200;
 
       var countdownTimer = setInterval(function () {
         seconds--;
@@ -87,7 +87,7 @@
           timerElement.style.display = "none";
           resendLink.style.display = "inline-block";
         }
-      }, 1000);
+      }, 3000);
     });
   </script>
   <script>
@@ -98,7 +98,7 @@
           var bsAlert = new bootstrap.Alert(alert);
           bsAlert.close();
         });
-      }, 2000);
+      }, 5000);
     });
   </script>
   <script src="/js/next-ui.js"></script>

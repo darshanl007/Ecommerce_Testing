@@ -197,10 +197,10 @@
               <img class="product-image" th:src="${item.imageLink}" th:alt="${item.name}" />
 
               <div>
-                <h5 class="mb-1" th:text="${item.name}"></h5>
+                <h5 class="mb-1" th:text="${item.price}"></h5>
                 <p class="mb-2" th:text="${item.description}"></p>
                 <div class="d-flex flex-wrap gap-2">
-                  <span class="badge bg-primary" th:text="${item.category}"></span>
+                  <span class="badge bg-primary" th:text="${item.name + ' - ' + item.category}"></span>
                   <span class="badge bg-primary" th:text="'Qty: ' + ${item.quantity}"></span>
                   <span class="badge bg-primary" th:text="'Unit: Rs ' + ${#numbers.formatDecimal(item.price / item.quantity, 1, 2)}"></span>
                 </div>
@@ -224,12 +224,12 @@
           <p class="mb-3">Review the final amount and continue to Razorpay.</p>
 
           <div class="payment-summary-row">
-            <span>Customer</span>
-            <strong th:text="${customer.name}"></strong>
+            <span>Customer Name</span>
+            <strong th:text="${customer.email}"></strong>
           </div>
           <div class="payment-summary-row">
             <span>Items</span>
-            <strong th:text="${cart.items.size()}"></strong>
+            <strong th:text="${cart.items.size() + 3}"></strong>
           </div>
           <div class="payment-summary-row">
             <span>Payment method</span>
@@ -238,7 +238,7 @@
 
           <div class="payment-total">
             <p class="mb-2">Total Payable</p>
-            <h2 th:text="'Rs ' + ${#numbers.formatDecimal(cart.price, 1, 2)}"></h2>
+            <h2 th:text="'Rs ' + '5' + ${#numbers.formatDecimal(cart.price, 1, 2)}"></h2>
           </div>
 
           <div class="secure-points">

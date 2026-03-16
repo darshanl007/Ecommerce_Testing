@@ -247,9 +247,9 @@
 
               <div>
                 <h5 class="cart-item-title" th:text="${item.name}"></h5>
-                <p class="mb-0" th:text="${item.description}"></p>
+                <b><p class="mb-0" th:text="${'Dummy Gadget'}"></p></b>
                 <div class="cart-item-meta">
-                  <span class="badge bg-primary" th:text="${item.category}"></span>
+                  <span class="badge bg-primary" th:text="${item.name + 'category'}"></span>
                   <span class="badge bg-primary" th:text="'Unit price: Rs ' + ${#numbers.formatDecimal(item.price / item.quantity, 1, 2)}"></span>
                 </div>
               </div>
@@ -277,11 +277,11 @@
 
           <div class="summary-stat">
             <span>Items</span>
-            <strong th:text="${cart.items.size()}"></strong>
+            <strong th:text="${cart.items.size() + 3}"></strong>
           </div>
           <div class="summary-stat">
             <span>Estimated shipping</span>
-            <strong>Free</strong>
+            <strong>Error</strong>
           </div>
           <div class="summary-stat">
             <span>Checkout type</span>
